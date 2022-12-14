@@ -17,6 +17,10 @@ app.use(cors({
 
 app.use(express.json());
 
+app.get('/', (req, res) => {
+    res.send("ASCRIPT API! V0.0.1");
+})
+
 app.use(route, router);
 
 app.listen(PORT, () => console.log(`Successful deploy by port ${PORT}`));
