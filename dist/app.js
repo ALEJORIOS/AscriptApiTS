@@ -16,5 +16,8 @@ app.use((0, cors_1.default)({
     origin: "*"
 }));
 app.use(express_1.default.json());
+app.get('/', (req, res) => {
+    res.send("ASCRIPT API! V0.0.1");
+});
 app.use(route, router_1.router);
 app.listen(PORT, () => console.log(`Successful deploy by port ${PORT}`));
