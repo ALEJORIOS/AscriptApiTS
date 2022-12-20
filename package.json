@@ -5,10 +5,16 @@
   "main": "./dist/app.js",
   "scripts": {
     "dev": "nodemon ./src/app.ts",
-    "start": "node ./dist/app.js",
-    "dev-start": "nodemon .src/dist/app.js",
-    "build": "tsc -p ."
+    "start": "nodemon src/index.ts",
+    "build": "rimraf dist && tsc",
+    "ts.check": "tsc --project tsconfig.json",
+    "add-build": "git add dist"
   },
+  "pre-commit": [
+    "ts.check",
+    "build",
+    "add-build"
+  ],
   "keywords": [],
   "author": "",
   "license": "ISC",
